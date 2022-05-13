@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import os
-import json
 from multiprocessing import get_context
 import time
 from time import sleep

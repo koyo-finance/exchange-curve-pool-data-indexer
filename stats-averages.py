@@ -2,29 +2,24 @@
 
 from collections import defaultdict
 from time import time
-import lmdb
+import redis
 import json
 
-DB_NAME = 'koyostats.lmdb'  # <- DB [block][pool#]{...}
+
+REDIS_HOST = "storage"
 START_BLOCK = 579_200
 TICKS = [1, 5, 10, 15, 30, 60 * 24]  # min
 day_ago = time() - 86400
+client = redis.Redis(host=REDIS_HOST, port=6379, db=0, decode_responses=True)
 
 summarized_data = {}
-db = lmdb.open(DB_NAME)
-db.set_mapsize(16 * 2 ** 32)
-
-
-def int2uid(value):
-    return int.to_bytes(value, 4, 'big')
 
 
 def get_block(b):
-    with db.begin(write=False) as tx:
-        obj = tx.get(int2uid(b))
-        if not obj:
-            return False
-        return json.loads(obj)
+    obj = client.json().get(f"block:{b}")
+    if not obj:
+        return False
+    return obj
 
 
 if __name__ == "__main__":
