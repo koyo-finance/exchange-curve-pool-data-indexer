@@ -14,7 +14,7 @@ from koyostats.newpool import NewPool
 
 MPOOL_SIZE = 100
 REDIS_HOST = "storage"
-CUSTOM_NODE = "http://mainnet.boba.node.koyo.finance/rpc"
+CUSTOM_NODE = "https://node.koyo.finance/rpc"
 
 os.environ["WEB3_HTTP_PROVIDER_URI"] = CUSTOM_NODE
 
