@@ -22,7 +22,7 @@ pools = {
     '4pool': (
         NewPool, ("0x9F0a572be1Fcfe96E94C0a730C5F4bc2993fe3F6", "0xDAb3Fc342A242AdD09504bea790f9b026Aa1e709"), 579_236),
     '3pool': (
-        NewPool, ("0x0613adbd846cb73e65aa474b785f52697af04c0b", "0xea1e627c12df4e054d61fd408ff7186353ac6ca1"), 559_237),
+        NewPool, ("0x0613ADbD846CB73E65aA474b785F52697af04c0b", "0xEa1E627c12DF4e054D61FD408Ff7186353aC6cA1"), 559_237),
 }
 start_blocks = {}
 
