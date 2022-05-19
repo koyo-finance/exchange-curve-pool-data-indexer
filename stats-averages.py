@@ -8,7 +8,7 @@ import json
 
 REDIS_HOST = "storage"
 START_BLOCK = 579_200
-TICKS = [1, 5, 10, 15, 30, 60 * 24]  # min
+TICKS = [1, 5, 10, 15, 30, 60 * 24, 60 * 24 * 7]  # min
 day_ago = time() - 86400
 client = redis.Redis(host=REDIS_HOST, port=6379, db=0, decode_responses=True)
 
@@ -26,12 +26,13 @@ if __name__ == "__main__":
     b = START_BLOCK
     decimals = {
             '4pool': [18, 18, 6, 6],
+            '3pool': [18, 6, 6],
     }
     underlying_decimals = {}
     start_blocks = {}
     virtual_prices = []
     daily_volumes = defaultdict(float)
-    pools = ['4pool']
+    pools = ['4pool', '3pool']
 
     ctr = 0
     while True:
