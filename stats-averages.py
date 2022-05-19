@@ -7,7 +7,7 @@ import json
 
 
 REDIS_HOST = "storage"
-START_BLOCK = 579_200
+START_BLOCK = 559_200
 TICKS = [1, 5, 10, 15, 30, 60 * 24, 60 * 24 * 7]  # min
 day_ago = time() - 86400
 client = redis.Redis(host=REDIS_HOST, port=6379, db=0, decode_responses=True)
