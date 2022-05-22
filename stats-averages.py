@@ -26,12 +26,13 @@ if __name__ == "__main__":
     b = START_BLOCK
     decimals = {
             '4pool': [18, 18, 6, 6],
+            '3pool': [18, 6, 6],
     }
     underlying_decimals = {}
     start_blocks = {}
     virtual_prices = []
     daily_volumes = defaultdict(float)
-    pools = ['4pool']
+    pools = ['4pool', '3pool']
 
     ctr = 0
     while True:
@@ -47,7 +48,7 @@ if __name__ == "__main__":
             ctr = 0
 
         virtual_prices.append(
-            [block[pools[0]]['timestamp']]
+            [block[pools[1]]['timestamp']]
             + [block[pool]['virtual_price'] / 1e18 if pool in block else 0 for pool in pools])
 
         for pool in block:
