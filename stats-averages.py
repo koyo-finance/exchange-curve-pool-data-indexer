@@ -26,13 +26,12 @@ if __name__ == "__main__":
     b = START_BLOCK
     decimals = {
             '4pool': [18, 18, 6, 6],
-            '3pool': [18, 6, 6],
     }
     underlying_decimals = {}
     start_blocks = {}
     virtual_prices = []
     daily_volumes = defaultdict(float)
-    pools = ['4pool', '3pool']
+    pools = ['4pool']
 
     ctr = 0
     while True:
