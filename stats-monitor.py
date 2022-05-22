@@ -63,7 +63,7 @@ if __name__ == '__main__':
 
     client = redis.Redis(host=REDIS_HOST, port=6379, db=0, decode_responses=True)
 
-    start_block = 579_200
+    start_block = 559_200
     # start_block = w3.eth.getBlock('latest')['number'] - 1000
     logger.info('Monitor started')
 
