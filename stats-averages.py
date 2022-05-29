@@ -47,7 +47,7 @@ if __name__ == "__main__":
             ctr = 0
 
         virtual_prices.append(
-            [block[pools[1]]["timestamp"]]
+            [block[pools[0]]["timestamp"]]
             + [
                 block[pool]["virtual_price"] / 1e18 if pool in block else 0
                 for pool in pools
